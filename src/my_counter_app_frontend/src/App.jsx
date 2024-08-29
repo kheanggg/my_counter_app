@@ -36,6 +36,19 @@ function App() {
     }
   };
 
+  const decrement = async () => {
+    if (loading) return; // Cancel if waiting for a new count
+    try {
+      setLoading(true);
+      let result = await my_counter_app_backend.inc(); // Decrement the count by 1
+      console.log(`[decrement] result:`, result);
+      console.log(`[decrement] hash:`, result.hash);
+      await fetchCount(); // Fetch the new count
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const reset = async () => {
     if (loading) return; // Cancel if waiting for a new count
     try {
