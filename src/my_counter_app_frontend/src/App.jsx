@@ -71,7 +71,7 @@ function App() {
       <button onClick={increment} style={{ opacity: loading ? 0.5 : 1 }} >Increment</button>
       <br />
       <br />
-      <button>Decrement (Add your code)</button>
+      <button onClick={decrement} style={{ opacity: loading ? 0.5 : 1 }}>Decrement</button>
       <br />
       <br />
       <button onClick={reset} style={{ opacity: loading ? 0.5 : 1 }} >Reset to zero</button>
